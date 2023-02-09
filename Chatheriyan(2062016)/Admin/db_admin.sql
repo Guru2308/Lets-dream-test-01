@@ -1,47 +1,90 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
 
-CREATE TABLE IF NOT EXISTS `tbl_product` (
+
+CREATE TABLE `tbl_product` (
   `Name` varchar(50) NOT NULL,
   `Prix` int(11) NOT NULL,
   `Categorie` varchar(50) NOT NULL,
   `etat` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `tbl_roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id',
-  `role` varchar(255) DEFAULT NULL COMMENT 'role_text',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `tbl_roles`
+--
+
+CREATE TABLE `tbl_roles` (
+  `id` int(11) NOT NULL COMMENT 'role_id',
+  `role` varchar(255) DEFAULT NULL COMMENT 'role_text'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_roles`
+--
 
 INSERT INTO `tbl_roles` (`id`, `role`) VALUES
 (1, 'Admin'),
-(2, 'Editor'),
-(3, 'User');
+(2, 'Mentor'),
+(3, 'Mentee');
 
+-- --------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `tbl_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `mobile` varchar(25) DEFAULT NULL,
   `roleid` tinyint(4) DEFAULT NULL,
-  `isActive` tinyint(4) DEFAULT '0',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+  `isActive` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_users`
+--
 
 INSERT INTO `tbl_users` (`id`, `name`, `username`, `email`, `password`, `mobile`, `roleid`, `isActive`, `created_at`, `updated_at`) VALUES
-(23, 'achref', 'achref', 'achref.nefzazoui@gmail.com', '3ea543d29ad3c1c09fcfbdda3f2f0617c50ab138', '54852852', 1, 0, '2020-12-19 14:35:56', '2020-12-19 14:35:56'),
-(24, 'ahmed', 'benahmed', 'achme@gmail.com', '7f0c9d56d40c3cc1e23e0113d5377779a4de86ff', '54277528', 3, 0, '2020-12-19 15:13:39', '2020-12-19 15:13:39'),
-(25, 'Fathi', 'fathiA', 'fathianh@gmail.com', '0a859b9a4ebbde4f63383bca7e34890985782348', '54672828', 3, 0, '2020-12-19 15:15:52', '2020-12-19 15:15:52'),
-(26, 'Makrem', 'makrem', 'makrem@gmail.com', 'adef7009a84a71c226ddf68671e929d68a707762', '42551771', 3, 0, '2020-12-19 15:16:59', '2020-12-19 15:16:59'),
-(27, 'Sirin', 'Sirin', 'Sirin@gmail.com', '03ee5fda2eae80be34c0142fe28ac6401e63324c', '23451671', 3, 0, '2020-12-19 15:17:34', '2020-12-19 15:17:34');
+(29, 'Dhanasekar', 'Dhanasekar', 'dhansty@gmail.com', '7bab591f6a6d505343606a0bd462c21f03e3d9f9', '9876543210', 1, 0, '2023-01-27 13:40:04', '2023-01-27 13:40:04'),
+(32, 'Ravi', 'Ravi', 'aferdeno@gmail.com', '4fdb22a0de28894c48ad958d898ddd188d08ed9c', '9344553033', 1, 1, '2023-01-30 09:25:56', '2023-01-30 09:25:56'),
+(33, 'rekha', 'Rekha', 'rek123@gmail.com', '7bab591f6a6d505343606a0bd462c21f03e3d9f9', '9876543210', 2, 0, '2023-02-03 09:18:27', '2023-02-03 09:18:27'),
+(34, 'Guru', 'guru', 'guru@gmail.com', '7bab591f6a6d505343606a0bd462c21f03e3d9f9', '9876543211', 3, 0, '2023-02-09 08:46:49', '2023-02-09 08:46:49');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_roles`
+--
+ALTER TABLE `tbl_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_roles`
+--
+ALTER TABLE `tbl_roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id', AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
