@@ -17,9 +17,6 @@ class Session{
         session_start();
       }
     }
-
-
-
   }
 
 
@@ -62,11 +59,4 @@ class Session{
       header('Location:index.php');
     }
   }
-
-
-
-
-
-
-
 }

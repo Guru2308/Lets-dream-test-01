@@ -48,7 +48,7 @@ if (isset($activeId)) {
     <h3><i class="fas fa-users mr-2"></i>User list <span class="float-right">Welcome! <strong>
           <span class="badge badge-lg badge-secondary text-white">
             <?php
-            $username = Session::get('username');
+            $username = Session::get('email');
             if (isset($username)) {
               echo $username;
             }
