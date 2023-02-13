@@ -102,7 +102,7 @@ class Users
       $stmt->bindValue(':name', $name);
       $stmt->bindValue(':username', $username);
       $stmt->bindValue(':email', $email);
-      $stmt->bindValue(':password', SHA1($password));
+      $stmt->bindValue(':password', $password);
       $stmt->bindValue(':mobile', $mobile);
       $stmt->bindValue(':roleid', $roleid);
       $result = $stmt->execute();
@@ -178,7 +178,8 @@ class Users
       $stmt->bindValue(':name', $name);
       $stmt->bindValue(':username', $username);
       $stmt->bindValue(':email', $email);
-      $stmt->bindValue(':password', SHA1($password));
+      // $stmt->bindValue(':password', SHA1($password));
+      $stmt->bindValue(':password',$password);
       $stmt->bindValue(':mobile', $mobile);
       $stmt->bindValue(':roleid', $roleid);
       $result = $stmt->execute();
@@ -211,7 +212,7 @@ class Users
   // User login Autho Method
   public function userLoginAutho($email, $password)
   {
-    $password = SHA1($password);
+    // $password = SHA1($password);
     $sql = "SELECT * FROM tbl_users WHERE email = :email and password = :password LIMIT 1";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->bindValue(':email', $email);
@@ -452,7 +453,8 @@ class Users
   // Check Old password method
   public function CheckOldPassword($userid, $old_pass)
   {
-    $old_pass = SHA1($old_pass);
+    // $old_pass = SHA1($old_pass);
+
     $sql = "SELECT password FROM tbl_users WHERE password = :password AND id =:id";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->bindValue(':password', $old_pass);
@@ -494,7 +496,8 @@ class Users
      <strong>Error !</strong> Old password did not Matched !</div>';
       return $msg;
     } else {
-      $new_pass = SHA1($new_pass);
+      // $new_pass = SHA1($new_pass);
+
       $sql = "UPDATE tbl_users SET
 
             password=:password
