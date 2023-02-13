@@ -34,8 +34,8 @@ if (isset($userAdd)) {
                   <input type="text" name="name"  class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="username">Your username</label>
-                  <input type="text" name="username"  class="form-control">
+                  <label for="regno">Registration number</label>
+                  <input type="number" name="regno"  class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="email">Email address</label>
