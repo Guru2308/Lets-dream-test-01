@@ -96,7 +96,7 @@ class Users
 <strong>Error !</strong> Email already Exists, please try another Email... !</div>';
       return $msg;
     } else {
-
+      include './mentor_mentee_db.php';
       $sql = "INSERT INTO tbl_users(name, username, email, password, mobile, roleid) VALUES(:name, :username, :email, :password, :mobile, :roleid)";
       $stmt = $this->db->pdo->prepare($sql);
       $stmt->bindValue(':name', $name);
@@ -179,7 +179,7 @@ class Users
       $stmt->bindValue(':username', $username);
       $stmt->bindValue(':email', $email);
       // $stmt->bindValue(':password', SHA1($password));
-      $stmt->bindValue(':password',$password);
+      $stmt->bindValue(':password', $password);
       $stmt->bindValue(':mobile', $mobile);
       $stmt->bindValue(':roleid', $roleid);
       $result = $stmt->execute();

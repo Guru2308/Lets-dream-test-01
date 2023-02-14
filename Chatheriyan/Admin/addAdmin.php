@@ -1,5 +1,6 @@
 <?php
 include 'inc/header.php';
+
 Session::CheckSession();
 $sId =  Session::get('roleid');
 if ($sId === '1') { ?>
@@ -20,7 +21,7 @@ if (isset($userAdd)) {
 
  <div class="card ">
    <div class="card-header">
-          <h3 class='text-center'>Add New User</h3>
+          <h3 class='text-center'>Add New Admin</h3>
         </div>
         <div class="cad-body">
 
@@ -35,7 +36,7 @@ if (isset($userAdd)) {
                 </div>
                 <div class="form-group">
                   <label for="regno">Registration number</label>
-                  <input type="number" name="regno"  class="form-control">
+                  <input type="number" name="username"  class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="email">Email address</label>
@@ -51,11 +52,11 @@ if (isset($userAdd)) {
                 </div>
                 <div class="form-group">
                   <div class="form-group">
-                    <label for="sel1">Select user Role</label>
+                    <label for="sel1">Role</label>
                     <select class="form-control" name="roleid" id="roleid">
                       <option value="1">Admin</option>
-                      <option value="2">Mentor</option>
-                      <option value="3">Mentee</option>
+                      <!-- <option value="2">Mentor</option>
+                      <option value="3">Mentee</option> -->
 
                     </select>
                   </div>
