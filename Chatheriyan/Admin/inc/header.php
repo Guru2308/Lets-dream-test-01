@@ -66,21 +66,53 @@ $users = new Users();
 
                 <a class="nav-link" href="index.php"><i class="fas fa-users mr-2"></i>User lists </span></a>
               </li>
-              <li class="nav-item
+              <!-- <li class="nav-item
 
               <?php
-
               $path = $_SERVER['SCRIPT_FILENAME'];
               $current = basename($path, '.php');
               if ($current == 'addUser') {
                 echo " active ";
               }
-
               ?>">
-
                 <a class="nav-link" href="addUser.php"><i class="fas fa-user-plus mr-2"></i>Add user </span></a>
               </li>
-            <?php  } ?>
+            <?php  } ?> -->
+
+            <li class="nav-item dropdown">
+            <?php
+              $path = $_SERVER['SCRIPT_FILENAME'];
+              $current = basename($path, '.php');
+              if ($current == 'addUser') {
+                // echo " active ";
+              }
+              ?>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add User</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./addMentee.php">Add Mentee</a>
+                <a class="dropdown-item" href="./addMentor.php">Add Mentor</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="./addAdmin.php">Add Admin</a>
+              </div>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <li class="nav-item
             <?php
 
