@@ -84,10 +84,10 @@ $users = new Users();
               $path = $_SERVER['SCRIPT_FILENAME'];
               $current = basename($path, '.php');
               if ($current == 'addUser') {
-                // echo " active ";
+                echo " active ";
               }
               ?>
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add User</a>
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Add User</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="./addMentee.php">Add Mentee</a>
                 <a class="dropdown-item" href="./addMentor.php">Add Mentor</a>
@@ -96,22 +96,7 @@ $users = new Users();
               </div>
             </li>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
             <li class="nav-item
             <?php
