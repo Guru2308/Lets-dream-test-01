@@ -71,6 +71,7 @@ if (isset($activeId)) {
       <button class="btn btn-outline-dark view_user" type="button">Admin</button>
       <button class="btn btn-outline-dark view_user" type="button">Mentor</button>
       <button class="btn btn-outline-dark view_user" type="button">Mentee</button>
+      <a href="./vid/index.php" class="btn btn-outline-dark view_user">Upload Videos</a>
 
     </form>
   </nav>

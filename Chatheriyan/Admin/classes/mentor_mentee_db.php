@@ -1,5 +1,5 @@
 <?php
-include 'C:/xampp/htdocs/backend/Lets-dream-test-01/Chatheriyan/Admin/config/config.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/Lets-dream-test-2062016/Chatheriyan/Admin/config/config.php';
 $conn = new mysqli('localhost', 'root', '','db_admin') or die("Connect failed: %s\n". $conn -> error);
 $query = 'SELECT * FROM `tbl_users` WHERE roleid = "3";';
 $result = mysqli_query($conn,$query);
