@@ -79,9 +79,6 @@ if (isset($userAdd)) {
 
   
   header('Location:index.php');
-
-
-
 }
  ?>
 
